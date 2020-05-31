@@ -1,5 +1,5 @@
 FROM centos:7
-RUN yum install -y git make pkgconfig gcc gcc-c++ libX11-devel.x86_64 libxkbfile-devel.x86-64 libsecret-devel
+RUN yum update -y && yum install -y git make pkgconfig gcc gcc-c++ libX11-devel.x86_64 libxkbfile-devel.x86-64 libsecret-devel
 ENV NODE_DISTRO linux-x64
 ENV NODE_VERSION v12.16.3
 ENV NODE_DOWNLOAD_URL "https://nodejs.org/dist/${NODE_VERSION}/node-${NODE_VERSION}-${NODE_DISTRO}.tar.xz"
