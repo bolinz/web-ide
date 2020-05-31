@@ -1,7 +1,7 @@
 FROM centos:7
-ENV NODE_VERSION v12.16.3
-ENV NODE_DISTRO linux-x64
 RUN yum install -y git make pkgconfig gcc gcc-c++ libX11-devel.x86_64 libxkbfile-devel.x86-64 libsecret-devel
+ENV NODE_DISTRO linux-x64
+ENV NODE_VERSION v12.16.3
 RUN DOWNLOAD_URL="https://nodejs.org/dist/${VERSION}/node-${VERSION}-${DISTRO}.tar.xz" && \
 curl -L -O "${DOWNLOAD_URL}" && \
 mkdir -p /usr/local/lib/nodejs && \
