@@ -8,3 +8,10 @@ mkdir -p /usr/local/lib/nodejs && \
 tar -xJvf node-$VERSION-$DISTRO.tar.xz -C /usr/local/lib/nodejs && \
 export PATH=/usr/local/lib/nodejs/node-$VERSION-$DISTRO/bin:$PATH && \
 npm install --global yarn
+
+RUN git clone https://github.com/microsoft/vscode.git && \
+cd vscode && \
+LAST_RELEASE=$(git branch -a |grep -o "release.*"|sort -r|head -n 1) && \
+git brach -b ${LAST_RELEASE} /origin/${LAST_RELEASE}
+
+RUN yarn watch
