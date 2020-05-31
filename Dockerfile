@@ -13,7 +13,7 @@ RUN git clone https://github.com/microsoft/vscode.git
 WORKDIR /vscode
 RUN LAST_RELEASE=$(git branch -a |grep -o "release.*"|sort -r|head -n 1) && \
 git checkout -b ${LAST_RELEASE} origin/${LAST_RELEASE}
-
+RUN yarn install
 RUN yarn watch
 
 EXPOSE 8080
