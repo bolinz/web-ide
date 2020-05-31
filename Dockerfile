@@ -10,9 +10,8 @@ export PATH=/usr/local/lib/nodejs/node-${NODE_VERSION}-${NODE_DISTRO}/bin:$PATH 
 npm install --global yarn
 ENV PATH /usr/local/lib/nodejs/node-${NODE_VERSION}-${NODE_DISTRO}/bin:$PATH
 RUN git clone https://github.com/microsoft/vscode.git
-
-RUN cd vscode && \
-LAST_RELEASE=$(git branch -a |grep -o "release.*"|sort -r|head -n 1) && \
+WORKDIR /vscode
+RUN LAST_RELEASE=$(git branch -a |grep -o "release.*"|sort -r|head -n 1) && \
 git checkout -b ${LAST_RELEASE} origin/${LAST_RELEASE}
 
 RUN yarn watch
