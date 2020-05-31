@@ -89,4 +89,8 @@ Vagrant.configure("2") do |config|
     s.path="./cloneVSCode"
     s.name="cloneVSCode"
   end
+  config.vm.provision "shell" ,run: "never" do |s|
+    s.path="./switch2taobao_registry"
+    s.name="switch2taobao_registry"
+  end
 end

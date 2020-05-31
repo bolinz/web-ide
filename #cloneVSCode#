@@ -1,0 +1,8 @@
+#!/bin/bash
+git clone https://gitee.com/mirrors/vscode.git
+
+cd vscode
+
+git checkout -b 1.45 origin/release/1.45
+
+yarn install
