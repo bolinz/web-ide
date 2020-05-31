@@ -17,3 +17,5 @@ RUN yarn install
 RUN yarn watch
 
 EXPOSE 8080
+
+ENTRYPOINT ["yarn","web"]
