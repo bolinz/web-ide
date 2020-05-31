@@ -12,6 +12,8 @@ npm install --global yarn
 RUN git clone https://github.com/microsoft/vscode.git && \
 cd vscode && \
 LAST_RELEASE=$(git branch -a |grep -o "release.*"|sort -r|head -n 1) && \
-git brach -b ${LAST_RELEASE} /origin/${LAST_RELEASE}
+git branch -b ${LAST_RELEASE} /origin/${LAST_RELEASE}
 
 RUN yarn watch
+
+EXPOSE 8080
